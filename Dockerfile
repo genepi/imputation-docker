@@ -35,11 +35,11 @@ RUN wget https://faculty.washington.edu/browning/beagle/beagle.${BEAGLE_VERSION}
     mv beagle.${BEAGLE_VERSION}.jar /usr/bin/.
 
 # Install minimac4
-ENV MINIMAC_VERSION=1.0.2
+ENV MINIMAC_VERSION=f18fadf748ce6d1fb8d17b647c1cb07fb8819515
 WORKDIR "/opt"
 RUN git clone https://github.com/statgen/Minimac4  && \
     cd Minimac4 && \
-    git checkout tags/v${MINIMAC_VERSION}  && \
+    git checkout f18fadf748ce6d1fb8d17b647c1cb07fb8819515 && \
     cget install -f ./requirements.txt  && \
     mkdir build && cd build  && \
     cmake -DCMAKE_TOOLCHAIN_FILE=../cget/cget/cget.cmake .. && \
