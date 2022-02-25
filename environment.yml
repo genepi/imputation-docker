@@ -7,3 +7,4 @@ channels:
   - conda-forge
 dependencies:
   - openjdk=11.0.9
+  - bcftools=1.14
