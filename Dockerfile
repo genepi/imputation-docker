@@ -57,7 +57,7 @@ RUN wget https://github.com/lukfor/pgs-calc/releases/download/${PGS_CALC_VERSION
 
 
 # Install imputationserver-utils
-ENV IMPUTATIONSERVER_UTILS_VERSION=v1.2.0
+ENV IMPUTATIONSERVER_UTILS_VERSION=v1.2.1
 RUN mkdir /opt/imputationserver-utils
 WORKDIR "/opt/imputationserver-utils"
 RUN wget https://github.com/genepi/imputationserver-utils/releases/download/${IMPUTATIONSERVER_UTILS_VERSION}/imputationserver-utils.tar.gz
@@ -75,3 +75,6 @@ RUN chmod +x /usr/local/bin/ccat
 
 # Needed, because imputationserver-utils starts process (e.g. tabix)
 ENV JAVA_TOOL_OPTIONS="-Djdk.lang.Process.launchMechanism=vfork"
+
+COPY files/bin/trace /usr/bin/.
+COPY files/bin/vcf2geno /usr/bin/.
